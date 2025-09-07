@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #fff9f0, #ffe7d9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+.container h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #222;
+}
+
+.container input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: linear-gradient(90deg, #00c853, #4caf50);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: linear-gradient(90deg, #4caf50, #00c853);
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  background: linear-gradient(90deg, #1976d2, #0d47a1);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(90deg, #0d47a1, #1976d2);
+}
+
+.container p {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.container a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.container strong {
+  color: #4caf50;
+}
+
+.message-success {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.message-error {
+  color: maroon;
+  font-weight: bold;
+  margin-top: 10px;
+}
