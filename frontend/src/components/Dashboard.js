@@ -9,7 +9,7 @@ function Dashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/auth/session", { withCredentials: true })
+      .get("https://klickks-backend-8jgn.onrender.com/api/auth/session", { withCredentials: true })
       .then((res) => {
         if (res.data.loggedIn) {
           setUser(res.data.user);
@@ -21,7 +21,7 @@ function Dashboard() {
 
   const handleLogout = async () => {
     await axios.post(
-      "http://localhost:5000/api/auth/logout",
+      "https://klickks-backend-8jgn.onrender.com/api/auth/logout",
       {},
       { withCredentials: true }
     );
@@ -38,9 +38,7 @@ function Dashboard() {
       ) : (
         <p>Loading...</p>
       )}
-      <button className="logout-btn" onClick={handleLogout}>
-        Logout
-      </button>
+      <button className="logout-btn" onClick={handleLogout}>Logout</button>
     </div>
   );
 }
