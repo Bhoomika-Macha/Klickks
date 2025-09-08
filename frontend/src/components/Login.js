@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 
+axios.defaults.withCredentials = true;
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,11 +14,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://klickks-backend-8jgn.onrender.com/api/auth/login",
-        { email, password },
-        { withCredentials: true }
-      );
+      const res = await axios.post("https://klickks-backend-8jgn.onrender.com/api/auth/login", { email, password });
       setMessage(res.data.message);
       navigate("/dashboard");
     } catch (err) {

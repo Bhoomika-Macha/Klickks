@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../App.css";
 
+axios.defaults.withCredentials = true;
+
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,11 +13,7 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://klickks-backend-8jgn.onrender.com/api/auth/register",
-        { email, password },
-        { withCredentials: true }
-      );
+      const res = await axios.post("https://klickks-backend-8jgn.onrender.com/api/auth/register", { email, password });
       setMessage(res.data.message);
     } catch (err) {
       setMessage(err.response?.data?.error || "Registration failed");

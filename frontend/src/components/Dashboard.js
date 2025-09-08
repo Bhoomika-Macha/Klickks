@@ -3,13 +3,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 
+axios.defaults.withCredentials = true;
+
 function Dashboard() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("https://klickks-backend-8jgn.onrender.com/api/auth/session", { withCredentials: true })
+      .get("https://klickks-backend-8jgn.onrender.com/api/auth/session")
       .then((res) => {
         if (res.data.loggedIn) {
           setUser(res.data.user);
@@ -20,11 +22,7 @@ function Dashboard() {
   }, [navigate]);
 
   const handleLogout = async () => {
-    await axios.post(
-      "https://klickks-backend-8jgn.onrender.com/api/auth/logout",
-      {},
-      { withCredentials: true }
-    );
+    await axios.post("https://klickks-backend-8jgn.onrender.com/api/auth/logout", {});
     navigate("/login");
   };
 
