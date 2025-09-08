@@ -29,7 +29,6 @@ Features implemented:
 ## Backend Setup (Node.js + Express)
 
 1. Navigate to backend:
-   ```bash
   cd backend
    
 2. Install dependencies:
